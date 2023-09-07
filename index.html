@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><i class="text-primary fa-solid fa-cloud-sun"></i>Weather app</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About this app</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Quick Cities
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Bengaluru</a></li>
+                <li><a class="dropdown-item" href="#">Delhi</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Mumbai</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+                >Usage Guide</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input id ="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- cards -->
+    <div class="container my-4">
+      <h1 class="text-center" >Weather Info of  <span id="cityName"></span></h1>
+      <main class="my-5">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col-md-12 col-lg-4">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temperature Info</h4>
+              </div>
+              <h1 class="mt-2 text-primary">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+              </h1>
+              <div class="card-body">
+                <ul class="list-unstyled mt-2 mb-4">
+                  <li>Temperature:  <span id="temp"></span> <span>&#8451;</span></li>
+                  <li>Minmum Temperature:  <span  id="min_temp"></span> <span>&#8451;</span></li>
+                  <li>Maximum Temperature:  <span  id="max_temp"></span> <span>&#8451;</span></li>
+                  <li>Feels Like:  <span  id="feels_like"></span> <span>&#8451;</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Wind and Humidity Info</h4>
+              </div>
+              <h1 class="text-primary my-3">
+                <i class="fa-solid fa-wind"></i>
+              </h1>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind Speed: <span  id="wind_speed"></span> km\hr</li>
+                  <li>Wind Direction: <span  id="wind_degrees"></span></li>
+                  <li>Cloud PCT: <span  id="cloud_pct"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Solar Info</h4>
+              </div>
+              <h1 class="text-primary my-3">
+                <i class="fa-solid fa-sun-plant-wilt"></i>
+              </h1>
+              <div class="card-body ">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Sun Rise: <span  id="sunrise"></span></li>
+                  <li>Sun Set: <span  id="sunset"></span></li>
+                  <li >Humidity: <span   id="humidity"></span>%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
